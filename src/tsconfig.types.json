@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["../@bizhermit/cli-sdk/**/*.ts", "../@bizhermit/cli-sdk/**/*.tsx"],
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "isolatedModules": false,
+    "rootDir": "../",
+    "outFile": "../dist/index.d.ts"
+  }
+}
