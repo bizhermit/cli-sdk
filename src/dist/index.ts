@@ -12,20 +12,32 @@ export const wl = (message?: string) => {
     if (message) process.stdout.write(message + "\n");
 };
 
-export const hasArg = (key: string) => {
+export const getArg = (index = 0) => {
+    const arg = process.argv[index + 2];
+    if (arg == null) return undefined;
+    return arg;
+};
+
+export const getArgs = () => {
+    const args: Array<string> = [];
+    for (let i = 2, il = process.argv.length; i < il; i++) args.push(process.argv[i]);
+    return args;
+};
+
+export const hasKeyArg = (key: string) => {
     return process.argv.indexOf(key) > 0;
 };
 
-export const getArg = (key: string) => {
-    const index = process.argv.findIndex(v => v === key);
+export const getKeyArg = (key: string) => {
+    const index = process.argv.lastIndexOf(key);
     if (index < 0) return undefined;
     const val = process.argv[index + 1];
     if (val == null || val.startsWith("-")) return undefined;
     return val;
 };
 
-export const getArgs = (key: string) => {
-    const index = process.argv.findIndex(v => v === key);
+export const getKeyArgs = (key: string) => {
+    const index = process.argv.lastIndexOf(key);
     const args: Array<string> = [];
     if (index < 0) return args;
     for (let i = index + 1, il = process.argv.length; i < il; i++) {
@@ -36,11 +48,13 @@ export const getArgs = (key: string) => {
     return args;
 };
 
-const CliSdk = {
+const cli = {
     rl,
     wl,
-    hasArg,
     getArg,
     getArgs,
+    hasKeyArg,
+    getKeyArg,
+    getKeyArgs,
 };
-export default CliSdk;
+export default cli;

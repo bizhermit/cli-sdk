@@ -1,19 +1,21 @@
 console.log("--- test ---");
 
-const CliSdk = require("./dist/index.js").default;
+const cli = require("./dist/index.js").default;
 
-console.log(CliSdk.hasArg("--hoge"));
-console.log(CliSdk.getArg("-hoge"));
-console.log(CliSdk.getArgs("-hoge"));
-console.log(CliSdk.getArgs("-last"));
+// console.log(cli.getArg());
+// console.log("10: ", cli.getArg(20));
+// console.log(cli.hasKeyArg("--hoge"));
+console.log(cli.getKeyArgs("-hoge"));
+// console.log(cli.getKeyArgs("-hoge"));
+// console.log(cli.getKeyArgs("-last"));
 
 (async () => {
-    const inputs = [];
-    inputs.push(await CliSdk.rl("input1 > "));
-    inputs.push(await CliSdk.rl("input2 > "));
-    inputs.push(await CliSdk.rl("input3 > "));
-    console.log(inputs);
-    for await (const text of inputs) {
-        CliSdk.wl(text);
-    }
+    // const inputs = [];
+    // inputs.push(await cli.rl("input1 > "));
+    // inputs.push(await cli.rl("input2 > "));
+    // inputs.push(await cli.rl("input3 > "));
+    // console.log(inputs);
+    // for await (const text of inputs) {
+    //     cli.wl(text);
+    // }
 })();
