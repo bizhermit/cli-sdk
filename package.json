@@ -20,7 +20,7 @@
     "CREDIT"
   ],
   "scripts": {
-    "dev": "node test",
+    "dev": "node test -hoge 1 2 3 \"a gaw\" -fuga 3 --hoge -last 1 2 3 4 5 6",
     "license": "npx rimraf CREDIT && npx license -o CREDIT --returnError",
     "build:types": "npx rimraf @bizhermit && npx cpx src/**/*.{ts,tsx} %npm_package_name% && npx tsc -p src/tsconfig.types.json --emitDeclarationOnly && npx rimraf @bizhermit",
     "build": "npm run license && npx rimraf dist && npx tsc -p src/tsconfig.json && npx rimraf bin/cli.d.ts && npx minifier dist && npm run build:types",
