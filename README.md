@@ -9,17 +9,19 @@ npm i @bizhermit/cli-sdk
 
 Example
 ```ts
-import cli from "@bizhermit/cli-sdk";
+import cli, { getKeyArgs } from "@bizhermit/cli-sdk";
 
 const func = async () => {
   const command = cli.getArg();
   const dest = cli.getKeyArg("-d");
-  const excludes = cli.getKeyArgs("-excludes");
+  const excludes = getKeyArgs("-excludes");
   const text = await cli.rl("input > ");
   await cli.wl(text);
 };
 func();
 ```
+
+### Methods
 
 * ***rl(message?: string) => Promise\<string>***  
   read input text line.
