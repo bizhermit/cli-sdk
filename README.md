@@ -1,17 +1,25 @@
-# 使い方
+# CLI SDK
 
-## tsファイル監視
+CLI SDK.  
 
-VSCodeのビルドタスクを利用してください。
-
-## 実行（確認）
-
+Install
 ```bash
-> npm run dev
+npm i @bizhermit/cli-sdk
 ```
 
-## ビルド
+Example
+```ts
+import CliSdk from "@bizhermit/cli-sdk";
 
-```bash
-> npm run build
+const func = async () => {
+  const text = await CliSdk.rl("input > ");
+  await CliSdk.wl(text);
+};
+func();
 ```
+
+* **rl(message?: string) => Promise\<string>**
+  read line.
+
+* **wl(message?: string) => void**
+  write line.
