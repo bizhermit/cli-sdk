@@ -1,6 +1,6 @@
 {
   "name": "@bizhermit/cli-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI SDK",
   "repository": {
     "type": "git",
