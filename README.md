@@ -22,10 +22,24 @@ func();
 ```
 
 * ***rl(message?: string) => Promise\<string>***  
-  read line.
+  read input text line.
+  ```ts
+  const text = await rl("input > ");
+  ```
+  ```bash
+  # console
+  input > _
+  ```
 
 * ***wl(message?: string) => void***  
-  write line.
+  write text for console.
+  ```ts
+  wl("hoge");
+  ```
+  ```bash
+  # console
+  hoge
+  ```
 
 * ***getArg(index?: number) => string | undefined***  
   get arg value.
