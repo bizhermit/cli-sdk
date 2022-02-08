@@ -24,20 +24,22 @@ export const getArgs = () => {
     return args;
 };
 
-export const hasKeyArg = (key: string) => {
-    return process.argv.indexOf(key) > 0;
+export const hasKeyArg = (key: string, subKey?: string) => {
+    return process.argv.indexOf(key) >= 0 || subKey == null ? false : process.argv.indexOf(subKey) >= 0;
 };
 
-export const getKeyArg = (key: string) => {
-    const index = process.argv.lastIndexOf(key);
+export const getKeyArg = (key: string, subKey?: string) => {
+    let index = process.argv.lastIndexOf(key);
+    if (subKey != null) index = Math.max(index, process.argv.lastIndexOf(subKey));
     if (index < 0) return undefined;
     const val = process.argv[index + 1];
     if (val == null || val.startsWith("-")) return undefined;
     return val;
 };
 
-export const getKeyArgs = (key: string) => {
-    const index = process.argv.lastIndexOf(key);
+export const getKeyArgs = (key: string, subKey?: string) => {
+    let index = process.argv.lastIndexOf(key);
+    if (subKey != null) index = Math.max(index, process.argv.lastIndexOf(subKey));
     const args: Array<string> = [];
     if (index < 0) return args;
     for (let i = index + 1, il = process.argv.length; i < il; i++) {

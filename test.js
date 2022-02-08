@@ -5,7 +5,7 @@ const cli = require("./dist/index.js").default;
 // console.log(cli.getArg());
 // console.log("10: ", cli.getArg(20));
 // console.log(cli.hasKeyArg("--hoge"));
-console.log(cli.getKeyArgs("-hoge"));
+console.log(cli.getKeyArgs("--fuga", "-fuga"));
 // console.log(cli.getKeyArgs("-hoge"));
 // console.log(cli.getKeyArgs("-last"));
 

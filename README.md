@@ -77,7 +77,7 @@ func();
 * ***getKeyArg(key: string) => string | undefined***  
   return arg value.
   ```bash
-  node cli -hoge 1 2 3 4 -fuga 5 -piyo
+  node cli -hoge 1 2 3 4 -fuga 5 -piyo -foo
   ```
   ```ts
   console.log(getKeyArg("-hoge")); // => "1"
@@ -87,13 +87,14 @@ func();
   ```
 
 * ***getKeyArgs(key: string) => Array\<string>***  
-  return arg values. continue get value until value start with hyphen.  
+  return arg values. continue get value until value start with hyphen or end.  
   ```bash
-  node cli -hoge 1 2 3 -fuga 4 -piyo
+  node cli -hoge 1 2 3 -fuga 4 -piyo -foo
   ```
   ```ts
   console.log(getKeyArgs("-hoge")); // => ["1", "2", "3"]
   console.log(getKeyArgs("-fuga")); // => ["4"]
   console.log(getKeyArgs("-piyo")); // => []
+  console.log(getKeyArgs("-foo"));  // => []
   console.log(getKeyArgs("-none")); // => []
   ```
