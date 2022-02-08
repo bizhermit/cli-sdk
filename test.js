@@ -9,13 +9,14 @@ console.log(cli.getKeyArgs("--fuga", "-fuga"));
 // console.log(cli.getKeyArgs("-hoge"));
 // console.log(cli.getKeyArgs("-last"));
 
+
 (async () => {
-    // const inputs = [];
-    // inputs.push(await cli.rl("input1 > "));
-    // inputs.push(await cli.rl("input2 > "));
-    // inputs.push(await cli.rl("input3 > "));
-    // console.log(inputs);
-    // for await (const text of inputs) {
-    //     cli.wl(text);
-    // }
+    const inputs = [];
+    inputs.push(await cli.rl("input1 > "));
+    inputs.push(await cli.rl("input2 > "));
+    console.log(inputs);
+    inputs.push(await cli.rl("input3 > "));
+    for (const text of inputs) {
+        cli.wl(text);
+    }
 })();

@@ -1,10 +1,20 @@
 export const rl = (message?: string) => {
-    return new Promise<string>((resolve) => {
-        if (message) process.stdout.write(message);
-        process.stdin.resume().on("data", (data) => {
+    if (message) process.stdout.write(message);
+    return new Promise<string>((resolve, reject) => {
+        try {
+            const listener = (data: Buffer) => {
+                process.stdin.pause().off("data", listener);
+                try {
+                    resolve(data.toString().trim());
+                } catch(err) {
+                    reject(err);
+                }
+            };
+            process.stdin.resume().on("data", listener);
+        } catch(err) {
             process.stdin.pause();
-            resolve(data.toString().trim());
-        });
+            reject(err);
+        }
     });
 };
 
