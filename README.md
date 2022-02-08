@@ -63,8 +63,7 @@ func();
   console.log(getArgs()); // => ["hoge", "fuga", "piyo"]
   ```
 
-
-* ***hasKeyArg(key: string) => boolean***  
+* ***hasKeyArg(key: string, subKey?: string) => boolean***  
   return has key arg.
   ```bash
   node cli --hoge
@@ -74,7 +73,7 @@ func();
   console.log(hasKeyArg("--fuga")); // => false
   ```
 
-* ***getKeyArg(key: string) => string | undefined***  
+* ***getKeyArg(key: string, subKey?: string) => string | undefined***  
   return arg value.
   ```bash
   node cli -hoge 1 2 3 4 -fuga 5 -piyo -foo
@@ -86,7 +85,7 @@ func();
   console.log(getKeyArg("-none")); // => undefined
   ```
 
-* ***getKeyArgs(key: string) => Array\<string>***  
+* ***getKeyArgs(key: string, subKey?: string) => Array\<string>***  
   return arg values. continue get value until value start with hyphen or end.  
   ```bash
   node cli -hoge 1 2 3 -fuga 4 -piyo -foo
