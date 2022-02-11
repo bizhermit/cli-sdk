@@ -19,4 +19,5 @@ console.log(cli.getKeyArgs("--fuga", "-fuga"));
     for (const text of inputs) {
         cli.wl(text);
     }
+    cli.test();
 })();

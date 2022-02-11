@@ -60,13 +60,6 @@ export const getKeyArgs = (key: string, subKey?: string) => {
     return args;
 };
 
-const test = () => {
-    console.log("-----cli------");
-    console.log(process.cwd());
-    console.log(__dirname);
-    console.log(process.argv);
-};
-
 const cli = {
     rl,
     wl,
@@ -75,6 +68,5 @@ const cli = {
     hasKeyArg,
     getKeyArg,
     getKeyArgs,
-    test,
 };
 export default cli;
