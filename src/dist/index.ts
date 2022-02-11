@@ -35,7 +35,7 @@ export const getArgs = () => {
 };
 
 export const hasKeyArg = (key: string, subKey?: string) => {
-    return process.argv.indexOf(key) >= 0 || subKey == null ? false : process.argv.indexOf(subKey) >= 0;
+    return process.argv.indexOf(key) >= 0 || (subKey == null ? false : process.argv.indexOf(subKey) >= 0);
 };
 
 export const getKeyArg = (key: string, subKey?: string) => {
