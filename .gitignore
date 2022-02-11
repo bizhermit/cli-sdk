@@ -2,6 +2,3 @@
 package-lock.json
 node_modules
 /dist
-/dev/dist
-/dev/bin
-/dev/build
