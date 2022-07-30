@@ -4,10 +4,10 @@
   "description": "CLI SDK",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bizhermit/cli-sdk.git"
+    "url": "https://github.com/bizhermit/node-cli-sdk.git"
   },
   "bugs": {
-    "url": "https://github.com/bizhermit/cli-sdk/issues"
+    "url": "https://github.com/bizhermit/node-cli-sdk/issues"
   },
   "author": "Senda Ryoichi <rsenda@bizhermit.com> (https://bizhermit.com)",
   "homepage": "https://bizhermit.com",

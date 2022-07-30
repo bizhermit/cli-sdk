@@ -9,14 +9,14 @@ npm i @bizhermit/cli-sdk
 
 Example
 ```ts
-import cli, { getKeyArgs } from "@bizhermit/cli-sdk";
+import Cli, { getKeyArgs } from "@bizhermit/cli-sdk";
 
 const func = async () => {
-  const command = cli.getArg();
-  const dest = cli.getKeyArg("-d");
+  const command = Cli.getArg();
+  const dest = Cli.getKeyArg("-d");
   const excludes = getKeyArgs("-excludes");
-  const text = await cli.rl("input > ");
-  await cli.wl(text);
+  const text = await Cli.rl("input > ");
+  await Cli.wl(text);
 };
 func();
 ```
