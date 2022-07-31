@@ -1,6 +1,6 @@
 {
-  "name": "@bizhermit/cli-sdk",
-  "version": "2.0.0-rc.0",
+  "name": "@bizhermit/cli-utils",
+  "version": "1.0.0-rc.0",
   "description": "CLI SDK",
   "keywords": [
     "bizhermit",
@@ -10,10 +10,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bizhermit/cli-sdk.git"
+    "url": "https://github.com/bizhermit/cli-utils.git"
   },
   "bugs": {
-    "url": "https://github.com/bizhermit/cli-sdk/issues"
+    "url": "https://github.com/bizhermit/cli-utils/issues"
   },
   "author": "Senda Ryoichi <rsenda@bizhermit.com> (https://bizhermit.com)",
   "homepage": "https://bizhermit.com",

@@ -4,12 +4,12 @@ CLI SDK.
 
 Install
 ```bash
-npm i @bizhermit/cli-sdk
+npm i @bizhermit/cli-utils
 ```
 
 Example
 ```ts
-import Cli, { getKeyArgs } from "@bizhermit/cli-sdk";
+import Cli, { getKeyArgs } from "@bizhermit/cli-utils";
 
 const func = async () => {
   const command = Cli.getArg();
